@@ -1,0 +1,22 @@
+{
+  "name": "jira-deploy-comment",
+  "version": "1.0.0",
+  "description": "Adds a comment to a JIRA issue for each commit since in the most recent tagged release",
+  "main": "index.js",
+  "bin": {
+    "jirarelease": "cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jira",
+    "ci"
+  ],
+  "author": "Andrew Levine",
+  "license": "MIT",
+  "dependencies": {
+    "got": "^6.3.0",
+    "minimist": "^1.2.0"
+  }
+}
