@@ -1,8 +1,11 @@
-const argv = require('minimist')(process.argv);
+const minimist = require('minimist');
 
-module.exports = () => ({
-    proj: process.env.JIRA_PROJECT || argv.proj,
-    host: process.env.JIRA_HOST || argv.host,
-    auth: process.env.JIRA_AUTH || argv.auth,
-    transition: process.env.JIRA_TRANSITION || argv.transition
-});
+module.exports = () => {
+    const argv = minimist(process.argv);
+    return {
+        proj: argv.proj || process.env.JIRA_PROJECT,
+        host: argv.host || process.env.JIRA_HOST,
+        auth: argv.auth || process.env.JIRA_AUTH,
+        transition: argv.transition || process.env.JIRA_TRANSITION
+    };
+};

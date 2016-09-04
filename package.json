@@ -1,13 +1,13 @@
 {
-  "name": "jira-deploy-comment",
+  "name": "jira-deploy-release",
   "version": "1.0.0",
-  "description": "Adds a comment to a JIRA issue for each commit since in the most recent tagged release",
+  "description": "Transition state of JIRA issues upon tagged release",
   "main": "index.js",
   "bin": {
     "jirarelease": "cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava"
   },
   "keywords": [
     "jira",
@@ -18,5 +18,9 @@
   "dependencies": {
     "got": "^6.3.0",
     "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "proxyquire": "^1.7.10"
   }
 }
