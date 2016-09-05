@@ -1,5 +1,7 @@
 # JIRA Deploy Release
 
+[![Build Status](https://travis-ci.org/DrewML/jira-deploy-release.svg?branch=master)](https://travis-ci.org/DrewML/jira-deploy-release)
+
 Automatically transition JIRA issues found in Git commit messages to a specified state. Can be used to easily remove a manual step in your Continuous Delivery process.
 
 ## Install
@@ -8,13 +10,17 @@ Automatically transition JIRA issues found in Git commit messages to a specified
 npm install --save-dev jira-deploy-release
 ```
 
+## Requirements
+
+- A version of `node.js` >= `6.0.0`
+
 ## Usage
 
 ### Authorization
 
 At this time, this package only supports using [Basic Authentication](https://developer.atlassian.com/jiradev/jira-apis/jira-rest-apis/jira-rest-api-tutorials/jira-rest-api-example-basic-authentication) when using the JIRA API.
 
-The `JIRA_AUTH` environment variable, or the `--auth` argument expect a string that is a JIRA username and password, in the format `user:pass`, that has been base64 encoded. You can quickly generate this in `node` using the global `btoa` function (`btoa('user:pass')`).
+The `JIRA_AUTH` environment variable, or the `--auth` argument expect a string that is a JIRA username and password, in the format `user:pass`, that has been base64 encoded.
 
 ### With Environment Variables
 
