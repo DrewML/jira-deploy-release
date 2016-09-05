@@ -27,7 +27,7 @@ const requests = jiraIssues.map(issueId => {
         host,
         issueId,
         basicAuthString: auth,
-        transitionId: String(transition)
+        transitionId: transition
     });
 });
 
