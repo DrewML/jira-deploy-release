@@ -15,6 +15,7 @@ if (!jiraIssues.length) {
         `No Jira issues found for release ${currentTag}`
     );
     process.exit();
+    return; // return after process.exit() is purely for unit testing
 }
 
 console.log(`Found ${jiraIssues.length} JIRA issue(s) in release ${currentTag}`);
@@ -30,7 +31,9 @@ const requests = jiraIssues.map(issueId => {
     });
 });
 
-Promise.all(requests.map(promiseReflect)).then(results => {
+// Result assigned to module.exports as a hint for unit-tests to know when
+// async work is complete
+module.exports = Promise.all(requests.map(promiseReflect)).then(results => {
     const succeeded = results.filter(result => result.resolved).length;
     const failed = results.filter(result => result.rejected).length;
 
