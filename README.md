@@ -13,6 +13,7 @@ npm install --save-dev jira-deploy-release
 ## Requirements
 
 - A version of `node.js` >= `6.0.0`
+- `Git` must be installed and available on `$PATH`
 
 ## Usage
 
