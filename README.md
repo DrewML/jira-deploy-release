@@ -10,6 +10,12 @@ npm install --save-dev jira-deploy-release
 
 ## Usage
 
+### Authorization
+
+At this time, this package only supports using [Basic Authentication](https://developer.atlassian.com/jiradev/jira-apis/jira-rest-apis/jira-rest-api-tutorials/jira-rest-api-example-basic-authentication) when using the JIRA API.
+
+The `JIRA_AUTH` environment variable, or the `--auth` argument expect a string that is a JIRA username and password, in the format `user:pass`, that has been base64 encoded. You can quickly generate this in `node` using the global `btoa` function (`btoa('user:pass')`).
+
 ### With Environment Variables
 
 ```shell
@@ -30,4 +36,4 @@ $ jira-deploy-release --proj=MYPROJ --host=jira.myhost.com --auth='UdjcldaXR3aHk
 ## TODO:
 
 - Allow configuration and enabling/disabling of message posted on issue
-- Unit test `git` and `jira` modules
+- Unit test `git` module

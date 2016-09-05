@@ -8,7 +8,7 @@ module.exports = {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                transition: transitionId,
+                transition: String(transitionId),
                 update: {
                     comment: [{
                         add: {
